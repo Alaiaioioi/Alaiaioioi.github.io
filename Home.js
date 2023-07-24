@@ -41,7 +41,7 @@ let meshes = [];  // 用来保存模型的所有Mesh的数组
 
 // Create a texture loader
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load('./material_0_baseColor.jpeg', function (texture) {
+const texture = textureLoader.load('./textures/material_0_baseColor.jpeg', function (texture) {
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
 });
