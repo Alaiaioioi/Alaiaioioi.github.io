@@ -69,9 +69,13 @@ loader.load(
   },
 
   // onError callback
-  function (error) {
-    console.log("An error occurred while loading the model");
-  }
+  // function (error) {
+  //   console.log("An error occurred while loading the model");
+  // }
+ function (error) {
+    console.error('An error occurred:', error);
+}
+
 );
 
 function animate() {
