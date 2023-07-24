@@ -219,15 +219,15 @@ controls.target = center;  // 在动画开始前设置目标
 
 const tween = new TWEEN.Tween(camera.position)
   .to(newPosition, 2000)  // 在 2000 毫秒内完成动画
-  .easing(TWEEN.Easing.Quadratic.InOut)  // 使用 InOut easing
+  .easing(tween.Easing.Quadratic.InOut)  // 使用 InOut easing
   .onUpdate(() => {
     camera.lookAt(controls.target);  // 在每一帧中，使相机看向 target（即模型的中心）
   })
   .onComplete(() => {
     // 当动画完成时，创建一个新的动画使相机平滑地返回原来的位置
-    const tweenBack = new TWEEN.Tween(camera.position)
+    const tweenBack = new tween.Tween(camera.position)
       .to(originalCameraPosition, 2000)
-      .easing(TWEEN.Easing.Quadratic.InOut)
+      .easing(tween.Easing.Quadratic.InOut)
       .onUpdate(() => {
         controls.target = originalCameraTarget;  // 使相机看向原来的目标
       })
